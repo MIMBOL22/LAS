@@ -39,7 +39,7 @@ function verify($pass, $hash, $type, $salt = null)
 }
 
 function getHash($system,$attr){
-    return $GLOBALS['tableHashs'][$system][$attr];
+    return $GLOBALS['tableHashs'][$system]['hashes'][$attr];
 }
 
 function checkWhitelist($mysql,$q,$config){
