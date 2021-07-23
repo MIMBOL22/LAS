@@ -12,9 +12,11 @@ $config = [
     ],
     'password' => [                                     //  Система пароля
         'system' =>     0,                              //        0 - WebMCR , 1 - DLE ,   2 - Другая                                      Какая у вас CMS?
-        'webmcr' =>     0,                              //        0 - MD5, 1 - Double MD5, 2 - md5(pass+salt),3-md5(md5(pass)+salt)        Какой у вас хэш пароля? (Если у вас не WebMCR не трогайте)
-        'dle' =>        0,                              //        0 - 11.1 и меньше,1 - 11.2 и выше                                        Какая у вас версия DLE? (Если у вас не  DLE   не трогайте)
-        'other_hash' => 2,                              //        0-MD5, 1-Double MD5, 2-md5(pass+salt),3-md5(md5(pass)+salt),4-bcrypt     Какой у вас хэш пароля? (Если у вас DLE или WebMCR не трогайте)
+        'add' => [                                      //     Уточнение
+            0,                                          //        0 - MD5, 1 - Double MD5, 2 - md5(pass+salt),3-md5(md5(pass)+salt)        Какой у вас хэш пароля? (Если у вас не WebMCR не трогайте)
+            0,                                          //        0 - 11.1 и меньше,1 - 11.2 и выше                                        Какая у вас версия DLE? (Если у вас не  DLE   не трогайте)
+            2,                                          //        0 - MD5, 1 - Double MD5, 2 - md5(pass+salt),3 - md5(md5(pass)+salt),4 - bcrypt     Какой у вас хэш пароля? (Если у вас DLE или WebMCR не трогайте)
+        ]
     ],
     'launcher' => [                                     //  Лаунчер
         'type' =>      0,                               //       0 - request, 1 - json                                                  Какой у вас тип авторизации?
