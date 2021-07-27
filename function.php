@@ -43,17 +43,8 @@ function getHash($system,$attr){
 }
 
 function checkWhitelist($mysql,$q,$config){
-//    switch ($config['additions']['type_whi']){
-//        case 1:
-//            error_verify("wht", !$q[$config['table']['wh']]);
-//            break;
-//        case 2:
-//            $qw = $mysql->query("SELECT * FROM {$config['wht']['name']} WHERE   {$config['wht']['username']}   = :u", ['u' => $user]);
-//            error_verify("wht", !$qw);
-//            break;
-//    }
-
-    $qw = $mysql->query("SELECT * FROM {$config['wht']['name']} WHERE {$config['wht']['username']} = :u", ['u' => $user]);
+    if ($config['additions']['type_whi'] == 0) return false;
+    $qw = $mysql->query("SELECT * FROM {$config['wht']['name']} WHERE {$config['wht']['username']} = :u", ['u' => $q[ $GLOBALS['tab'][$config['password']['system']]['tables'][1]]]);
     error_verify( "wht", $config['additions']['type_whi'] == 1 ? !$q[$config['table']['wh']] : !$qw);
 }
 
