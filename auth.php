@@ -16,7 +16,7 @@ include 'function.php';
 include 'mysql.php';
 
 error_verify('teh', $config['teh']);
-error_verify('adm', $_GET['key'] != $config['additions']['key']);
+error_verify('adm', $_GET['key'] != $config['launcher']['key']);
 
 $user = $GLOBALS[$config['type'] ? "_POST" : "_GET"][$config['launcher']['user']];
 $pass = $GLOBALS[$config['type'] ? "_POST" : "_GET"][$config['launcher']['pass']];
