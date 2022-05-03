@@ -37,6 +37,6 @@ error_verify('pas', !$res);
 checkWhitelist($mysql,$q,$config);
 checkBan($mysql,$q,$config);
 
-if ($res === true  && $_GET['debug'] != "1")
+if ($res === true)
     ok($q[$tas[1]]);
 
