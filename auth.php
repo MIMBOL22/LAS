@@ -22,8 +22,8 @@ include 'mysql.php';
 error_verify('teh', $config['teh']  && $_GET['debug'] != "1");
 error_verify('adm', $_GET['key'] != $config['launcher']['key']);
 
-$user = $GLOBALS[$config['type'] ? "_POST" : "_GET"][$config['launcher']['user']];
-$pass = $GLOBALS[$config['type'] ? "_POST" : "_GET"][$config['launcher']['pass']];
+$user = $GLOBALS[$config['launcher']['type'] ? "_POST" : "_GET"][$config['launcher']['user']];
+$pass = $GLOBALS[$config['launcher']['type'] ? "_POST" : "_GET"][$config['launcher']['pass']];
 
 $mysql = new mysqlo($config['database']);
 
